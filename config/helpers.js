@@ -3,11 +3,11 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 let conn = new Mysqli({
-    Host: 'sql12.freemysqlhosting.net', // IP/domain name 
-    post: 3306, // port, default 3306 
-    user: 'sql12384254', // username
-    password: 'fhh44gpneB', // password
-    db: 'sql12384254' 
+    Host: process.env.MYSQL_ADDON_HOST, // IP/domain name 
+    post: process.env.MYSQL_ADDON_PORT, // port, default 3306 
+    user: process.env.MYSQL_ADDON_USER, // username
+    password: process.env.MYSQL_ADDON_PASSWORD, // password
+    db: process.env.MYSQL_ADDON_DB 
 });
 
 let db = conn.emit(false, '');
